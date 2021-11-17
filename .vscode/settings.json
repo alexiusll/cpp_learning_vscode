@@ -31,6 +31,8 @@
 
   "C_Cpp.clang_format_sortIncludes": true,
   "files.associations": {
-    "iostream": "cpp"
-  } // 格式化时调整include的顺序（按字母排序）
+    "iostream": "cpp",
+    "ostream": "cpp"
+  },
+  // "C_Cpp.errorSquiggles": "Disabled" // 格式化时调整include的顺序（按字母排序）
 }
