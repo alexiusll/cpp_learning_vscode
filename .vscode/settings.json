@@ -33,7 +33,8 @@
   "files.associations": {
     "iostream": "cpp",
     "ostream": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "memory": "cpp"
   },
   // "C_Cpp.errorSquiggles": "Disabled" // 格式化时调整include的顺序（按字母排序）
 }
