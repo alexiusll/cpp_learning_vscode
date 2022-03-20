@@ -51,6 +51,12 @@ struct struct_03 {
   short b;
 };
 
+struct struct_04 {
+  double a; // 8
+  int b; // 4
+  char c; // 1 
+};
+
 int main() {
   int *a;
   void *point_void;
@@ -63,6 +69,8 @@ int main() {
   long long_num = -1;
   long long long_long_num = -1;
   char char_c = 'c';
+  char char_c_list[] = "hello world ";
+  int int_num_list[3];
   unsigned int us_int = 1;
 
   cout << "--- point ---" << endl;
@@ -78,8 +86,15 @@ int main() {
   cout << "long long:" << sizeof(long_long_num) << endl;
   cout << "unsigned int:" << sizeof(us_int) << endl;
 
+
   cout << "--- char ---" << endl;
   cout << "char:" << sizeof(char_c) << endl;
+
+  cout << "--- char[] ---" << endl;
+  cout << "char[]:" << sizeof(char_c_list) << endl;
+
+  cout << "--- int[] ---" << endl;
+  cout << "int[]:" << sizeof(int_num_list) << endl;
 
   cout << "--- 类 ---" << endl;
   cout << "空类大小:" << sizeof(class_test_empty) << endl;
@@ -95,4 +110,6 @@ int main() {
   cout << "int 和 void*:" << sizeof(struct_01) << endl;
   cout << "int 和 int:" << sizeof(struct_02) << endl;
   cout << "double 和 short:" << sizeof(struct_03) << endl;
+  cout << "double 和 int 和 char:" << sizeof(struct_04) << endl;
+  
 }
