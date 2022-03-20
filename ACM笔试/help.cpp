@@ -8,6 +8,20 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+#include <algorithm> 
+// sort() 函数 lower_bound() 用于找出范围内 不大于 num的第一个元素
+// swap() 交换
+// 用于找出范围内 不大于 num的第一个元素 low=std::lower_bound (v.begin(), v.end(), 20);        
+// 用于找出范围内 不小于 num的第一个元素  up= std::upper_bound (v.begin(), v.end(), 20);    
+
+#include <numeric>
+// int sum = accumulate(vec.begin() , vec.end() , 42); 累加求和，第三个形参是累加的初值。
+
+#include <map> // map 数据结构
+#include <set> // set 数据结构
+
+
 using namespace std;
 
 //* 调试: 打印 1维 vector<T>

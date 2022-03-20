@@ -100,7 +100,7 @@ int main() {
   cout << "空类大小:" << sizeof(class_test_empty) << endl;
   cout << "无虚函数 的类大小:" << sizeof(class_test_noV) << endl;
   cout << "1个虚函数 类大小:" << sizeof(class_test_01) << endl;
-  cout << "2个虚函数 类大小:" << sizeof(class_test_02) << endl;
+  cout << "2个虚函数 类大小:" << sizeof (class_test_02) << endl;
   cout << "2个虚函数 + 部分数据 类大小:" << sizeof(class_test_03) << endl;
 
   cout << "继承：无虚函数 类大小:" << sizeof(class_son) << endl;

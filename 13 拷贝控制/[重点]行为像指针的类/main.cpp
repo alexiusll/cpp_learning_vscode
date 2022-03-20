@@ -1,7 +1,10 @@
 /*
  * @Author: linkenzone
  * @Date: 2022-03-16 21:49:05
- * @Descripttion: Do not edit
+ * @Descripttion: 
+ * 
+ * shared_ptr 的实现
+ * 
  */
 #include <iostream>
 #include <memory>
