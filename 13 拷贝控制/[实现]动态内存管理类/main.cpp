@@ -168,7 +168,7 @@ void StrVec::alloc_n_move(size_t new_cap)
     auto dest = newdata;
     auto elem = elements;
     for (size_t i = 0; i != size(); ++i)
-        alloc.construct(dest++, std::move(*elem++));
+        alloc.construct(dest++, move(*elem++));
     free();
     elements = newdata;
     first_free = dest;
