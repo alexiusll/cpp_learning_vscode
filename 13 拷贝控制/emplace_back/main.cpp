@@ -26,7 +26,7 @@ int main()
 {
     cout << "emplace_back:" << endl;
     std::vector<testDemo> demo1;
-    demo1.emplace_back(2);  
+    demo1.emplace_back(move(2));  
 
     cout << "push_back:" << endl;
     std::vector<testDemo> demo2;

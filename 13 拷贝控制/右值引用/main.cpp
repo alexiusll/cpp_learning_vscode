@@ -40,7 +40,7 @@ int main()
     int a = 10;
     int &rb = a;
     int &&rrb = move(a);
-    int &&rrc = 10 + 10;
+    int &&rrc = move(rrb);
     rrc = 999;
     a = 777;
     cout << "a: " << a << endl;
@@ -48,13 +48,14 @@ int main()
     cout << "rrb: " << rrb << endl;
     cout << "rrc: " << rrc << endl;
 
-    int *aa = new int(50);
-    vector<int> int_list({move(*aa)});
+    int aa = 50;
+    vector<int> int_list({move(aa)});
+    int_list.push_back(1);
     // int_list.push_back(move(*aa));
-    cout << "aa: " << *aa << endl;
+    cout << "aa: " << aa << endl;
     cout << "int_list[0]: " << int_list[0] << endl;
     int_list[0] = 88888;
-    *aa = 11111;
-    cout << "aa: " << *aa << endl;
+    aa = 11111;
+    cout << "aa: " << aa << endl;
     cout << "int_list[0]: " << int_list[0] << endl;
 }
