@@ -21,6 +21,7 @@
 #include <map> // map 数据结构
 #include <set> // set 数据结构
 
+int a = INT_MAX;
 
 using namespace std;
 
@@ -109,6 +110,8 @@ int x[3][3],y[3][3];
 int main()
 {
     // input_a_b();
+
+    // getline(cin,str);
 
     input_1d_list();
 }
