@@ -4,8 +4,8 @@
  * @Descripttion: Do not edit
  */
 
-#include <iostream>
 #include <cstring>
+#include <iostream>
 
 using namespace std;
 
@@ -62,15 +62,43 @@ public:
 
     //* 移动构造函数
     // 不应该抛出异常
-    myString(myString&& other) noexcept 
+    myString(myString &&other) noexcept
     {
+        cout << "移动构造函数..." << endl;
+        m_size = other.m_size;
+        m_data = other.m_data;
 
+        // 清空 other
+        //! 不能直接删除这个，因为会调用 delete m_data
+        other.m_size = 0;
+        other.m_data = nullptr;
+    }
+
+    //* 赋值运算符
+    myString& operator=(myString&& other) noexcept
+    {
+        cout << "赋值运算符...移动" << endl;
+
+        if(this != &other){
+            //! 先删除自己的 m_data 否则会内存泄漏
+            delete[] m_data;
+
+            m_size = other.m_size;
+            m_data = other.m_data;
+
+            // 清空 other
+            //! 不能直接删除这个，因为会调用 delete m_data
+            other.m_size = 0;
+            other.m_data = nullptr;
+        }
+
+        return *this;
     }
 
     ~myString()
     {
         cout << "析构函数..." << endl;
-        delete m_data;
+        delete[] m_data;
     }
 
     void Print()
@@ -91,6 +119,10 @@ class Entity
 {
 public:
     Entity(const myString &name) : m_Name(name)
+    {
+    }
+
+    Entity(myString &&name) : m_Name(std::move(name))
     {
     }
 
@@ -141,6 +173,25 @@ int main()
 
     //* ---- 移动转发的例子 ----
     //* 这里即调用了 普通构造函数 又调用了 拷贝构造函数
+    cout << "---一般的情况:---" << endl;
     Entity entity(myString("23333"));
     entity.PrintName();
+
+    cout << "---使用移动构造函数的情况:---" << endl;
+    Entity __entity("2333"); // 传入右值
+    __entity.PrintName();
+
+    //* ---- std::Move 的作用 ----
+    cout << "---std::Move 的作用:---" << endl;
+    myString str_a = "Hello";
+    myString str_dest = str_a;             // 拷贝构造函数
+    myString str_dest2 = std::move(str_a); // 移动构造函数
+    myString str_dest3 = "111";
+    
+    str_dest3.operator=(std::move(str_dest2)); // 赋值运算符
+    str_dest.Print();
+    str_dest2.Print();
+    str_dest3.Print();
+
+    cout << "结束..." << endl;
 }
