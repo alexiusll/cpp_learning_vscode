@@ -2,9 +2,11 @@
  * @Author: linkenzone
  * @Date: 2022-05-19 17:23:58
  * @Descripttion:
- *
+ * 
  * 生成器模式
- *
+ * https://refactoringguru.cn/design-patterns/builder
+ * 
+ * 组合优于继承
  */
 
 #include <memory>
@@ -18,6 +20,10 @@ public:
     void SetKeyboard(std::string_view) {}
     void SetHeadphone(std::string_view) {}
 };
+
+//* 该模式会将对象构造过程划分为一组步骤， 比如 build­Walls创建墙壁和 build­Door创建房门创建房门等。 
+//* 每次创建对象时， 你都需要通过生成器对象执行一系列步骤。 
+//* 重点在于你无需调用所有步骤， 而只需调用创建特定对象配置所需的那些步骤即可。
 
 //* 提供接口的 Builder
 class GameDevice
@@ -58,7 +64,8 @@ private:
     std::unique_ptr<DeviceSuite> device_; //* 设备套件
 };
 
-//* 用实现类构建一个完整产品
+//* 主管类
+//* 定义构造的过程，构建一个完整产品
 class Life
 {
 public:
