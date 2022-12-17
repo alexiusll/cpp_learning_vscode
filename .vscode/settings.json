@@ -79,7 +79,8 @@
     "map": "cpp",
     "numeric": "cpp",
     "set": "cpp",
-    "xtree": "cpp"
+    "xtree": "cpp",
+    "stdio.h": "c"
   },
   // "C_Cpp.errorSquiggles": "Disabled" // 格式化时调整include的顺序（按字母排序）
 }
