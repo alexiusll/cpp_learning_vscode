@@ -80,7 +80,11 @@
     "numeric": "cpp",
     "set": "cpp",
     "xtree": "cpp",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "functional": "cpp",
+    "list": "cpp",
+    "unordered_map": "cpp",
+    "xhash": "cpp"
   },
   // "C_Cpp.errorSquiggles": "Disabled" // 格式化时调整include的顺序（按字母排序）
 }
