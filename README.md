@@ -1,7 +1,5 @@
 # cpp_learning_vscode
-利用vscode学习c++的代码
 
+开发环境：VSCODE
 
-
-目前分为6个部分
-
+用于学习 C++ 的相关代码
